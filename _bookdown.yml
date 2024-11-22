@@ -1,4 +1,4 @@
-book_filename: 'CBook'
+book_filename: 'book-learningr'
 output_dir: "docs"
 output: bookdown::gitbook
 language:
