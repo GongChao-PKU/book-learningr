@@ -64,6 +64,8 @@ pdf.options(height=10/2.54, width=10/2.54, family="GB1") # 注意：此设置要
 如：
 
 ```{r u-w-f-ex01, fig.cap="图形说明文字"}
+library(showtext)
+showtext_auto()
 plot(1:10, main="程序生成的测试图形")
 ```
 

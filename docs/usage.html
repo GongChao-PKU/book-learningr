@@ -267,7 +267,11 @@ div.csl-indent {
 就可以对图形自动编号，
 并且可以用如<code>\@ref(fig:label)</code>的格式引用图形。
 如：</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="usage.html#cb34-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;程序生成的测试图形&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="usage.html#cb34-1" tabindex="-1"></a><span class="fu">library</span>(showtext)</span></code></pre></div>
+<pre><code>## Loading required package: sysfonts</code></pre>
+<pre><code>## Loading required package: showtextdb</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="usage.html#cb37-1" tabindex="-1"></a><span class="fu">showtext_auto</span>()</span>
+<span id="cb37-2"><a href="usage.html#cb37-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;程序生成的测试图形&quot;</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:u-w-f-ex01"></span>
 <img src="9001-usage_files/figure-html/u-w-f-ex01-1.png" alt="图形说明文字" width="672" />
 <p class="caption">
@@ -287,8 +291,8 @@ div.csl-indent {
 就可以对表格自动编号，
 并且可以用如<code>\@ref(tab:label)</code>的格式引用表格。
 如：</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="usage.html#cb35-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;自变量&quot;</span><span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&quot;因变量&quot;</span><span class="ot">=</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb35-2"><a href="usage.html#cb35-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(d, <span class="at">caption=</span><span class="st">&quot;表格说明文字&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="usage.html#cb38-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;自变量&quot;</span><span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&quot;因变量&quot;</span><span class="ot">=</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb38-2"><a href="usage.html#cb38-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(d, <span class="at">caption=</span><span class="st">&quot;表格说明文字&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:u-w-tab-ex01">表A.1: </span>表格说明文字</caption>
 <thead>
@@ -379,8 +383,8 @@ div.csl-indent {
 <h3><span class="header-section-number">A.3.1</span> 转换为网页<a href="usage.html#usage-gitbook" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>用如下命令将整本书转换成一个每章为一个页面的网站，
 称为gitbook格式：</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="usage.html#cb36-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
-<span id="cb36-2"><a href="usage.html#cb36-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="usage.html#cb39-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
+<span id="cb39-2"><a href="usage.html#cb39-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>为查看结果，
 在<code>_book</code>子目录中双击其中的<code>index.html</code>文件，
 就可以在网络浏览器中查看转换的结果。
@@ -391,8 +395,8 @@ div.csl-indent {
 可以节省时间，
 缺点是导航目录会变得不准确。
 命令如：</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="usage.html#cb37-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;1001-chapter01.Rmd&quot;</span>,</span>
-<span id="cb37-2"><a href="usage.html#cb37-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="usage.html#cb40-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;1001-chapter01.Rmd&quot;</span>,</span>
+<span id="cb40-2"><a href="usage.html#cb40-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>单章的网页可以通过网络浏览器中的“打印”功能，
 选择一个打印到PDF的打印机，
 可以将单章转换成PDF格式。</p>
@@ -409,8 +413,8 @@ TinyTeX优点是直接用R命令就可以安装，
 但是，安装时需要从国外网站下载许多文件，
 有因为网络不畅通而安装失败的危险。</p>
 <p>为了安装R的tinytex扩展包和单独的TinyTeX编译软件，应运行：</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="usage.html#cb38-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb38-2"><a href="usage.html#cb38-2" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="usage.html#cb41-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb41-2"><a href="usage.html#cb41-2" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>安装过程需要从国外的服务器下载许多文件，
 在国内的网络环境下有可能因为网络超时而失败。
 如果安装成功，
@@ -418,7 +422,7 @@ TinyTeX软件包在MS Windows系统中一般会安装在 <code>C:\Users\用户�
 其中“用户名”应替换成系统当前用户名。
 如果需要删除TinyTeX软件包， 只要直接删除那个子目录就可以。</p>
 <p>为了判断TinyTeX是否安装成功， 在RStudio中运行</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="usage.html#cb39-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">is_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="usage.html#cb42-1" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">is_tinytex</span>()</span></code></pre></div>
 <p>结果应为TRUE, 出错或者结果为FALSE都说明安装不成功。
 在编译<code>pdf_book</code>时，可能会需要联网下载LaTeX所需的格式文件。</p>
 <p>Bookdown借助操作系统中安装的LaTeX编译软件TinyTeX将整本书转换成一个PDF文件，
@@ -428,8 +432,8 @@ TinyTeX软件包在MS Windows系统中一般会安装在 <code>C:\Users\用户�
 用户如果需要进行LaTeX定制，
 可修改模板中的<code>preamble.tex</code>文件。</p>
 <p>转换为PDF的命令如下：</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="usage.html#cb40-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
-<span id="cb40-2"><a href="usage.html#cb40-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::pdf_book&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="usage.html#cb43-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
+<span id="cb43-2"><a href="usage.html#cb43-2" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::pdf_book&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>在<code>_book</code>子目录中找到<code>CBook.pdf</code>文件，
 这是转换的结果。
 CBook.tex是作为中间结果的LaTeX文件，

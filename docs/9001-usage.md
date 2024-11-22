@@ -61,6 +61,19 @@
 
 
 ```r
+library(showtext)
+```
+
+```
+## Loading required package: sysfonts
+```
+
+```
+## Loading required package: showtextdb
+```
+
+```r
+showtext_auto()
 plot(1:10, main="程序生成的测试图形")
 ```
 
